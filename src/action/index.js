@@ -106,10 +106,10 @@ export const setProductDetail = async (dispatch, productId, qty,col,colNum) => {
   dispatch({ type: BEGIN_PRODUCTS_REQUEST });
   try {
     const product = await getProductById(productId);
-      if(qty === 0 && product.countInStock >0)
-      qty = 1;
-      if(col==="")col="None";
-
+      // if(qty === 0 && product.countInStock >0)
+      // qty = 1;
+      // if(col==="")col="None";
+    if(qty===0)
     dispatch({
       type: SET_PRODUCT_DETAIL,
       payload: {
@@ -119,7 +119,16 @@ export const setProductDetail = async (dispatch, productId, qty,col,colNum) => {
         colNum
             }
           })
-          
+        else
+        dispatch({
+          type: SET_PRODUCT_DETAIL,
+          payload: {
+            product,
+            qty,
+            col,
+            colNum
+                }
+              })
     dispatch({ type: SUCCESS_PRODUCTS_REQUEST });
   } catch (error) {
     console.log(error);

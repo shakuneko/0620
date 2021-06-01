@@ -2,12 +2,14 @@ import { useContext } from "react";
 import ProductItem from "./ProductItem";
 import DesignersItem from "./DesignersItem";
 import designers from "../json/designer-info.json"
-import {Row,Col}from "antd";
+import {Row,Col, Spin}from "antd";
 import { StoreContext } from "../store";
+import { LoadingOutlined } from '@ant-design/icons';
 
 export default function ProductList(){
-  const { state: { page: { products } } } = useContext(StoreContext);
-    return(
+  const { state: { page: { products } , requestProducts: { loading }} } = useContext(StoreContext);
+  const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
+  return(
       <div  className="product">
           <img alt="" className="header-pic"src="https://img.onl/u7zjYS"/>
             
@@ -17,6 +19,12 @@ export default function ProductList(){
                 <div className="more">
                   <p >More...</p>
                 </div>
+                {loading
+        ? (
+          <div className="spinner-wrap">
+            <Spin indicator={antIcon} className="spinner" />
+          </div>
+        ) : (
                 <Row gutter={[32,32]}>
                   {products.map(product => (
                     <Col 
@@ -32,6 +40,8 @@ export default function ProductList(){
                     </Col>
                   ))}
                 </Row>
+                    )
+                  }
                 <h4 style={{ marginTop:"3rem" }}>Popular Designer</h4>
                 <Row >
                   {designers.map(designer => (
@@ -43,9 +53,10 @@ export default function ProductList(){
                     </Col>
                   ))}
                 </Row>
+        )
               </div>
             </div>
-
+      
     </div>
     );
 }
