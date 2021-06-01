@@ -1,0 +1,38 @@
+[
+    {
+       "title": "NORDIC NEST Shopping Cart",
+       "name": "allProducts",
+       "url": "/"
+    },
+    {
+       "title": "Clock",
+       "name": "Clock",
+       "url": "/products/clock"
+    },
+    {
+       "title": "Chair",
+       "name": "Chair",
+       "url": "/products/chair"
+    },
+    {
+       "title": "Table",
+       "name": "Table",
+       "url": "/products/table"
+    },
+    {
+       "title": "Lighting",
+       "name": "Lighting",
+       "url": "/products/lighting"
+    },
+    {
+       "title": "Other",
+       "name": "Other",
+       "url": "/products/other"
+    },
+    {
+      "title": "Feed JSON Page",
+      "name": "FeedJSONPage",
+      "url": "/admin/feed-products"
+   }
+  
+ ]

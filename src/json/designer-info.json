@@ -1,0 +1,21 @@
+[
+    {
+        "id":"1",
+        "image":"https://mms.businesswire.com/media/20141209006588/en/444861/5/scottbros2.jpgg",
+        "name":" Jonathan and Drew Scott",
+        "description": "Drew is a real estate expert who scouts neglected houses and negotiates their purchases. His brother, Jonathan, is a licensed contractor who then renovates the houses. Together, the Property Brothers help families find, buy, and transform fixer-uppers into dream homes on a strict timeline and budget.",
+        "work1":"https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2020/9/15/1/BP_HBRVB702_Jonathan_003b_kitchen_after_D1050400.jpg.rend.hgtvcom.966.644.suffix/1600179478130.jpeg",
+        "work2":"https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2017/6/14/0/HBRVB503ZH_drew-bedroom-after_265768_977227.1521684.jpg.rend.hgtvcom.966.644.suffix/1497448970894.jpeg",
+        "work3":"https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2018/6/20/1/BP_HBRVB605_Jonathan_bedroom_AFTER_0070.jpg.rend.hgtvcom.966.644.suffix/1529599737612.jpeg"
+    },
+    {
+        "id":"2",
+        "image":"https://www.thewrap.com/wp-content/uploads/2020/02/Dave-and-Jenny-Marrs-on-HGTV-Fixer-to-Fabulous.jpg",
+        "name":" Jonathan and Drew Scott",
+        "description": "Dave works as a builder, while I support the design side of our business. We love having projects on our own where we haveour own style, but when we work with clients it’s soimportant to make sure it’s their style. I want it to befor them and reflect who they are. With our own style, it evolves. For now, with more kids and being older, our style has become moreminimalist. I’m constantly feeling this need forsimplicity. I really love natural light when possible, natural elements like natural stone and wood. Tryingto make things feel very calming is important, andthat our home — any home we design — is comfortable and cozy.",
+        "work1":"https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2019/10/28/0/HALHM101_286574_1079526.jpg.rend.hgtvcom.966.644.suffix/1572271007057.jpeg",
+        "work2":"https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2019/10/28/0/halhm101_286574_1079540.jpg.rend.hgtvcom.966.644.suffix/1572271008602.jpeg",
+        "work3":"https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2019/10/28/0/HALHM101_286574_1079533.jpg.rend.hgtvcom.966.644.suffix/1572271008350.jpeg"
+        
+    }
+]
