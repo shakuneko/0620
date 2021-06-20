@@ -55,7 +55,7 @@ export default function ProductList(){
                     </Col>
                   ))}
                 </Row>
-        )
+        
               </div>
             </div>
       

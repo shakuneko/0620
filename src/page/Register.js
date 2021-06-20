@@ -16,6 +16,7 @@ function Register(props) {
           <AppHeader title="Register Page" />
         </Header>
         <Content className="layout-content">
+        <div className="Register-title">Register</div>
           <RegisterCard redirect={redirect} />
         </Content>
         <Footer className="layout-footer">

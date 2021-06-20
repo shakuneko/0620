@@ -16,6 +16,7 @@ function Login(props) {
           <AppHeader title="Login Page" />
         </Header>
         <Content className="Login-content">
+          <div className="Login-content-title">LOG IN</div>
           <LoginCard redirect={redirect} />
         </Content>
         <Footer className="layout-footer">

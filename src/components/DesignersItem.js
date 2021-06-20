@@ -17,7 +17,7 @@ export default function ProductItem( { designer }) {
                         </div>
                         <div className="designer-btn">
                             <Button className="learn-more" 
-                                // icon="Learn More"
+                                icon="Learn More"
                                 type="primary"
                                 onClick={"/"}>
                             </Button>

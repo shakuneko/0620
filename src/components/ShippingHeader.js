@@ -14,14 +14,18 @@ export default function ShippingHeader(props) {
   };
 
   return (
-    <header className="shipping-header">
-      <div className="header-wrap">
-        <div className="shipping-header-text">
-          <h1 className="header-title" onClick={onClickHeader}>{props.title}</h1>
+    <div>
+      <h4 className="header-title-sm" onClick={onClickHeader}>YOUR HOME</h4>
+      <header className="shipping-header">
+        <div className="header-wrap">
+          <div className="shipping-header-text">
+            <h1 className="shipping-title" onClick={onClickHeader}>{props.title}</h1>
+          </div>
         </div>
-      </div>
+    
 
-      <CheckoutSteps {...props}></CheckoutSteps>
-    </header>
+        <CheckoutSteps {...props}></CheckoutSteps>
+      </header>
+    </div>
   );
 }

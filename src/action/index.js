@@ -48,6 +48,7 @@ import {
   createOrderApi,
   getOrderById,
   getOrderByUser,
+  checkLoginApi
 } from "../api/index";
 
 export const addCartItem = (dispatch, product, qty,col,colNum) => {
@@ -311,14 +312,14 @@ export const activeNavItemSet = (dispatch, activeNavItem) => {
 };
 
 
-// export const checkLogin = (dispatch) => {
-//   const isLogin = checkLoginApi();
-//   if(!isLogin) {
-//     localStorage.removeItem('orderInfo')
-//     dispatch({ type: LOGOUT_REQUEST });    
-//   }
-//   return isLogin;
-// }
+export const checkLogin = (dispatch) => {
+  const isLogin = checkLoginApi();
+  if(!isLogin) {
+    localStorage.removeItem('orderInfo')
+    dispatch({ type: LOGOUT_REQUEST });    
+  }
+  return isLogin;
+}
 
 // export const setProductDetail = (dispatch, productId, qty,col,colNum) => {
 //   const product = products.find(

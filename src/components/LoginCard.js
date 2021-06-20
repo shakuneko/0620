@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Input, Button, Checkbox } from 'antd';
 import { WarningOutlined, MailOutlined, LockOutlined } from '@ant-design/icons';
-import { loginToFirebase, rememberLoginUser } from '../action'
+import { loginToFirebase, rememberLoginUser, checkLogin } from '../action'
 import { StoreContext } from "../store"
 
 const LoginCard = ({ redirect }) => {
@@ -20,10 +20,11 @@ const LoginCard = ({ redirect }) => {
   }
 
   useEffect(() => {    
-    if( userInfo ) history.push(redirect);
+    if( userInfo && checkLogin(dispatch) ) history.push(redirect);
   }, [ userInfo ]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
+   
     <Form
       name="normal_login"
       className="login-form"
@@ -69,6 +70,7 @@ const LoginCard = ({ redirect }) => {
         />
       </Form.Item>
       <Form.Item>
+        <div className="login-remember">
         <Form.Item
           name="remember"
           noStyle
@@ -76,9 +78,10 @@ const LoginCard = ({ redirect }) => {
           <Checkbox onChange={onChange} checked={remember}>Remember me</Checkbox>
         </Form.Item>
 
-        <Link className="login-form__forgot" to={"/"}>
+        <Link className="login-form__forgot" style={{ color:'#FFC72D' }} to={"/"}>
           Forgot password
         </Link>
+        </div>
       </Form.Item>
 
       <Form.Item>
@@ -100,7 +103,8 @@ const LoginCard = ({ redirect }) => {
             Log in
           </Button>
         )}
-        Or <Link to={"/register?redirect=shipping"}>register now!</Link>
+        <div className="login-or">
+        Or <Link to={"/register?redirect=shipping" }className="login-register" style={{ color:'#FFC72D' }}>register now!</Link></div>
         {error === "" ? (
           <></>
         ) : (

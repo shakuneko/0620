@@ -141,7 +141,7 @@ export const authenticateAnonymously = () => {
 
 
 
-// export const checkLoginApi = () => {
-//   const user = auth.currentUser;
-//   return user.uid?  true : false;
-// }
+export const checkLoginApi = () => {
+  const user = auth.currentUser;
+  //return user.uid?  true : false;
+}

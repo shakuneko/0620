@@ -9,7 +9,7 @@ function Payment() {
     <Layout className="container main-layout">
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
-          <ShippingHeader title="Payment Method Page" step1 step2 step3 />
+          <ShippingHeader title="Payment " step1 step2  />
         </Header>
         <Content className="Payment-content">
            <PaymentMethodCard />

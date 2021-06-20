@@ -23,7 +23,7 @@ export default function ShippingAddressCard() {
       form={form}
     >
       <Form.Item
-        label="Full Name: "
+        label="Full Name "
         name="fullName"
         rules={[
           {
@@ -39,7 +39,7 @@ export default function ShippingAddressCard() {
         <Input placeholder="Enter full name" />
       </Form.Item>
       <Form.Item
-        label="Address: "
+        label="Address "
         name="address"
         rules={[
           {
@@ -55,7 +55,7 @@ export default function ShippingAddressCard() {
         <Input placeholder="Enter Address" />
       </Form.Item>
       <Form.Item
-        label="City: "
+        label="City "
         name="city"
         rules={[
           {
@@ -69,7 +69,7 @@ export default function ShippingAddressCard() {
       </Form.Item>
 
       <Form.Item
-        label="Postal Code: "
+        label="Postal Code "
         name="postalCode"
         rules={[
           {
@@ -83,7 +83,7 @@ export default function ShippingAddressCard() {
       </Form.Item>
 
       <Form.Item
-        label="Country: "
+        label="Country "
         name="country"
         rules={[
           {

@@ -12,6 +12,7 @@ import Profile from './page/Profile'
 import Shipping from './page/Shipping'
 import Payment from './page/Payment'
 import Feed from './page/Feed'
+import PlaceOrder from './page/PlaceOrder'
 import Order from './page/Order'
 
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="/register" component={Register} />
           <Route path="/shipping" component={Shipping} />
           <Route path="/payment" component={Payment} />
+          <Route path="/placeorder" component={PlaceOrder} />
           <Route path="/order/:orderId" component={Order} />
           <Route path="/profile" component={Profile} />
   

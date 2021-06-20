@@ -9,7 +9,7 @@ function PlaceOrder() {
     <Layout className="container main-layout">
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
-          <ShippingHeader title="Place Order Page" step1 step2 step3 step4 />
+          <ShippingHeader title="Order" step1 step2 step3  />
         </Header>
         <Content className="layout-content">
            <PlaceOrderCard />

@@ -28,7 +28,7 @@ export default function NavBar()    {
                     </NavLink>
                 </div>
                 <div className=" header-icon ">
-                    <img alt="" className="header-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-search.png"/>
+                    <img alt="" className="header-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/Search_bg.png"/>
                     <UserInfo/>
                     <CartSummary/>
                 </div>

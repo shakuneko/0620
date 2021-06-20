@@ -1,6 +1,8 @@
 @import '~antd/dist/antd.css';
 @import 'antd-button-color/dist/css/style.css';
 
+
+
 /* RWD Container */
 .container {
   width: 100%;
@@ -79,7 +81,10 @@ h3 {
   width:100%;
   line-height: normal;
 }
-
+.header-title-sm{
+  color:#FFC72D;
+  
+}
 .header-text {
   width:25%;
 }
@@ -98,8 +103,8 @@ h3 {
 }
 
 .header-icon1{
-  width: 1rem;
-  height:1rem;
+  width: 1.2rem;
+  height:1.2rem;
 }
 
 .navbar {
@@ -1256,6 +1261,7 @@ ul {
   font-size: 0.6rem;
   width: 80%;
   margin-bottom: 2rem;
+  
 }
 .checkout-steps > div {
   border-top: 0.3rem #c0c0c0 solid;
@@ -1263,8 +1269,11 @@ ul {
   flex: 1;
   padding: 0.2rem;
   font-weight: bold;
+  display: flex;
+  justify-content:center;
 }
 .checkout-steps > div.active {
+
   border-top-color: #6366F2;
   color: #6366F2;
 }
@@ -1274,22 +1283,26 @@ ul {
 .shipping-header{
   display: flex;
   width:100%;
-  height: 12rem;
   justify-content:center;
   align-items: center;
   flex-direction: column;
-  padding: 0 2rem 0 2rem;
-  margin-top: 1rem;
-}
-.shipping-header-text{
-  width: 100%;
   text-align: center;
 }
-
+/* .shipping-header-text{
+  width: 100%;
+  display: flex;
+  justify-content:flex-start;
+} */
+.shipping-form{
+  width: 45%;
+}
+.shipping-title{
+  color:black;
+}
 /* Checkout Steps */
 .checkout-steps {
   font-size: 0.6rem;
-  width: 80%;
+  width: 50%;
   margin-bottom: 2rem;
 }
 .checkout-steps > div {
@@ -1300,17 +1313,23 @@ ul {
   font-weight: bold;
 }
 .checkout-steps > div.active {
-  border-top-color: #6366F2;
-  color: #6366F2;
+  border-top-color: #FFC72D;
+  color: #FFC72D;
 }
 
 /* Login Page */
 .Login-content{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 5rem 0 5rem 0;
+}
+.Login-content-title{
+  font-size: 20px;
+  margin-bottom: 40px;
+  
 }
 .login-form{
   width: 40%;
@@ -1318,12 +1337,42 @@ ul {
 .login-form__button{
   width: 100%;
   height: 40px;
+  background-color: #426393;
+}
+.login-form-forgot{
+  float: left;
+}
+.login-remember{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+.login-or{
+  display: flex;
+  justify-content:flex-end;
+
+}
+.login-register{
+  padding-left: 5px;
 }
 .header-cart-summary{
   height: 40px;
 }
-
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #FFC72D;
+  border-color: #FFC72D;
+}
+.ant-col-rtl .login-form-forgot {
+  float: left;
+}
 /* Register Page */
+.layout-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
 .Register-content{
   display: flex;
   justify-content: center;
@@ -1332,7 +1381,24 @@ ul {
   padding: 5rem 0 5rem 0;
 }
 .register-form{
-  width: 40%;
+  width: 50%;
+
+}
+.Register-title{
+  font-size: 20px;
+  padding: 40px;
+}
+.register-account{
+  display: flex;
+  justify-content:flex-end;
+}
+.register-login{
+  padding-left: 5px;
+}
+.ant-form-item-label{
+  display: flex;
+  justify-content:flex-start;
+  align-items: flex-start;
 }
 
 /* Profile Page */
@@ -1363,4 +1429,30 @@ ul {
   width: 100%;
   padding: 5rem 0 5rem 0;
   margin-top: 5rem;
+}
+.ant-form-item-control-input{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.ant-radio-group{
+  display: flex;
+  justify-content:space-around;
+}
+.ant-radio-checked .ant-radio-inner{
+  border-color: #FFC72D !important ;
+}
+.ant-radio-checked .ant-radio-inner:after{
+  background-color: #FFC72D;
+}
+
+/* PlaceOrder / Order Card */
+.card {
+  border: 0.1rem #c0c0c0 solid;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.card-body {
+  padding: 1rem;
 }
