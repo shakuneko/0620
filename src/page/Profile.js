@@ -11,7 +11,7 @@ function Profile() {
         <Header className="layout-header">
           <AppHeader title="Profile Page" />
         </Header>
-        <Content className="layout-content">
+        <Content className="Profile-content">
           <ProfileCard />
         </Content>
         <Footer className="layout-footer">

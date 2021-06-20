@@ -1,4 +1,4 @@
-import {createContext} from "react";
+// import {createContext} from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import './App.css';
@@ -17,13 +17,14 @@ import Order from './page/Order'
 
 import { StoreProvider } from "./store";
 
-export const StoreContext = createContext();
+// export const StoreContext = createContext();
 function App() {
   return (
     <StoreProvider>
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="products/:pageName" component={Home} />
           <Route path="/admin/feed-products" component={Feed} />
           <Route path="/products/:category/:productId" component={Product} />
           <Route path="/shopping" component={Shopping} />

@@ -18,6 +18,7 @@ export default function ProductList(){
                 <h4 >Hot Products</h4>
                 <div className="more">
                   <p >More...</p>
+                 
                 </div>
                 {loading
         ? (
@@ -36,6 +37,7 @@ export default function ProductList(){
                       xxl={{ span: 6 }}
                      
                     >
+                      
                       <ProductItem  product={product}/>
                     </Col>
                   ))}

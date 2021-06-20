@@ -14,9 +14,9 @@ export default function ShippingHeader(props) {
   };
 
   return (
-    <header className="header">
+    <header className="shipping-header">
       <div className="header-wrap">
-        <div className="header-text">
+        <div className="shipping-header-text">
           <h1 className="header-title" onClick={onClickHeader}>{props.title}</h1>
         </div>
       </div>

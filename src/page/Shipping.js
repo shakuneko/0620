@@ -11,7 +11,7 @@ function Shipping() {
         <Header className="layout-header">
           <ShippingHeader title="Shipping Page" step1 step2 />
         </Header>
-        <Content className="layout-content">
+        <Content className="Shipping-content">
           <ShippingAddressCard />
         </Content>
         <Footer className="layout-footer">

@@ -109,14 +109,11 @@ export const setProductDetail = async (dispatch, productId, qty,col,colNum) => {
       // if(qty === 0 && product.countInStock >0)
       // qty = 1;
       // if(col==="")col="None";
-    if(qty===0)
+    if(qty === 0)
     dispatch({
       type: SET_PRODUCT_DETAIL,
       payload: {
         product,
-        qty,
-        col,
-        colNum
             }
           })
         else
@@ -299,19 +296,19 @@ export const getUserOrders = async (dispatch) => {
   }
 }
 
-// export const pageContentsSet = (dispatch, title, products) => {
-//   dispatch({
-//     type: SET_PAGE_CONTENT,
-//     payload: { title, products },
-//   });
-// };
+export const pageContentsSet = (dispatch, title, products) => {
+  dispatch({
+    type: SET_PAGE_CONTENT,
+    payload: { title, products },
+  });
+};
 
-// export const activeNavItemSet = (dispatch, activeNavItem) => {
-//   dispatch({
-//     type: SET_NAVBAR_ACTIVEITEM,
-//     payload: activeNavItem,
-//   });
-// };
+export const activeNavItemSet = (dispatch, activeNavItem) => {
+  dispatch({
+    type: SET_NAVBAR_ACTIVEITEM,
+    payload: activeNavItem,
+  });
+};
 
 
 // export const checkLogin = (dispatch) => {

@@ -11,7 +11,7 @@ function Payment() {
         <Header className="layout-header">
           <ShippingHeader title="Payment Method Page" step1 step2 step3 />
         </Header>
-        <Content className="layout-content">
+        <Content className="Payment-content">
            <PaymentMethodCard />
         </Content>
         <Footer className="layout-footer">

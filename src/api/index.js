@@ -35,6 +35,7 @@ export const getProductById = async (productId) => {
 export const getProducts = async (url) => {
   const collection = jsonInfo.find(element => element.url === url);
   const collectionName = collection.name || "allProducts";
+  console.log(collectionName)
   let jsonProducts = [];
 
   // QUERY PRODUCTS
@@ -134,9 +135,9 @@ export const signOut = () => {
 //   });
 // }
 
-// export const authenticateAnonymously = () => {
-//   return firebase.auth().signInAnonymously();
-// };
+export const authenticateAnonymously = () => {
+  return firebase.auth().signInAnonymously();
+};
 
 
 

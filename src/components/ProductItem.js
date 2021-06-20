@@ -18,6 +18,9 @@ export default function ProductItem( { product }) {
                     alt={product.alt} />
             </Link>
             <div className="product-info">
+            <h6 >
+                    {product.category}
+                </h6>
                 <h5>
                     {product.name}
                 </h5>

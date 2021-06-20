@@ -61,7 +61,7 @@ function ProductDetail() {
                             <Select 
                                 defaultValue={qty} 
                                 className="select-style"
-                                onChange={val => setProductDetail(dispatch, product.id, val,col)}
+                                onChange={val => setProductDetail(dispatch, product.id, val,col, product.category)}
                             >
                                 {[...Array(product.countInStock).keys()].map((x) => (
                                     <Option key={x + 1} value={x + 1}>
