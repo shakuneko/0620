@@ -141,8 +141,8 @@ export default function CartModal() {
                      </Link>
                      <Link className="cart-btn2">
                         <Button
-                           className="cart-modal-btn-right  " 
-                           type="warning" danger
+                           className="cart-modal-btn-right" 
+                           type="warning" 
                            onClick={checkoutHandler}>
                            <span>Checkout</span>
                         </Button>
