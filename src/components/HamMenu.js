@@ -1,7 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import React from 'react';
-import {  Drawer } from 'antd';
+import {  Drawer,Badge } from 'antd';
 import { CloseOutlined } from '@ant-design/icons';
+import { Link } from "react-router-dom";
+import { CartIcon2,PofileIcon2 } from "./Icon";
+
 
 export default function HamMenu({  visible, onClose })    {
     return (
@@ -36,8 +39,16 @@ export default function HamMenu({  visible, onClose })    {
                 </div>
                 <div className=" ham-menu-icons ">
                     <img alt="" className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-search.png"/>
-                    <img alt="" className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-account.png"/>
-                    <img alt="" className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-cart.png"/> 
+                    <Link to="/profile">
+                        <Badge  size={"small"} style={{ color: 'white', backgroundColor: '#FFC72D' }}>
+                            <PofileIcon2 size={50}/>
+                        </Badge>
+                    </Link>
+                    <Link to="/shopping">
+                        <Badge  size={"small"} style={{ color: 'white', backgroundColor: '#FFC72D' }}>
+                            <CartIcon2 size={50}/>
+                        </Badge>
+                    </Link>
                 </div>
             </Drawer>
             

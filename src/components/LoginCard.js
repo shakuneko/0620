@@ -53,6 +53,7 @@ const LoginCard = ({ redirect }) => {
         <Input
           prefix={<MailOutlined className="site-form-item-icon" />}
           placeholder="E-Mail"
+          size="large"
         />
       </Form.Item>
       <Form.Item
@@ -68,6 +69,7 @@ const LoginCard = ({ redirect }) => {
         <Input.Password
           prefix={<LockOutlined className="site-form-item-icon" />}
           type="password"
+          size="large"
           placeholder="Password"
         />
       </Form.Item>

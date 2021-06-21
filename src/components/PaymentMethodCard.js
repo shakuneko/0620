@@ -23,7 +23,7 @@ export default function PaymentMethodCard() {
          form={form}
       >
 
-         <Form.Item name="paymentMethod"className="paymet-item" label="Payment Method: ">
+         <Form.Item name="paymentMethod" className="paymet-item" label="Payment Method: ">
             <Radio.Group className="radio">
                <Radio value="Google">Google</Radio>
                <Radio value="PayPal">PayPal</Radio>
@@ -43,4 +43,3 @@ export default function PaymentMethodCard() {
       </Form>
    );
 }
-

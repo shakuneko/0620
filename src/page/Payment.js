@@ -13,7 +13,6 @@ function Payment() {
         </Header>
         <Content className="Payment-content">
            <PaymentMethodCard />
-
         </Content>
         <Footer className="layout-footer">
           <AppFooter />

@@ -38,7 +38,7 @@ const ProfileCard = () => {
       initialValues={userInfo}
     >
       <Form.Item
-        label="name: "
+        label="Name: "
         name="name"
         rules={[
           {
@@ -54,7 +54,7 @@ const ProfileCard = () => {
         <Input placeholder={displayName} />
       </Form.Item>
       <Form.Item
-        label="email: "
+        label="E-mail: "
         name="email"
         rules={[
           {
@@ -126,6 +126,7 @@ const ProfileCard = () => {
           type="primary"
           htmlType="submit"
           className="login-form__button"
+          size="large"
         >
           Submit
         </Button>
@@ -134,6 +135,7 @@ const ProfileCard = () => {
           type="warning"
           style={{ marginTop: "0.8rem" }}
           className="logout-form__button"
+          size="large"
           onClick={handleLogout}
         >
           Log out

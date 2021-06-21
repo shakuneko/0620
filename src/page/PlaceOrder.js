@@ -9,7 +9,7 @@ function PlaceOrder() {
     <Layout className="main-layout">
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
-          <ShippingHeader title="Order" step1 step2 step3  />
+          <ShippingHeader className="Login-content-title" title="Place Order" step1 step2 step3  />
         </Header>
         <Content className="PlaceOrder-content">
           <div className="PlaceOrder-content-sm">

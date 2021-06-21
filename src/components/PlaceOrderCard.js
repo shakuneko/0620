@@ -1,15 +1,20 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Row, Col, Button, Spin } from "antd";
 import { LoadingOutlined } from '@ant-design/icons';
 import { createOrder, resetOrder, requestOrderDetail } from "../action"
 import { StoreContext } from "../store";
+import OrderModal from "./OrderModal";
 
 export default function PlaceOrderCard() {
   const { state: { cart, orderInfo: { loading, success, order } }, dispatch } = useContext(StoreContext);
   const { cartItems } = cart;
   const history = useHistory()
-  const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
+  const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#FFC72D" }} spin />;
+
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const toggleModal = () => setIsModalVisible(!isModalVisible);
 
   const placeOrderHandler = () => {
     createOrder(dispatch, cart)
@@ -45,12 +50,12 @@ export default function PlaceOrderCard() {
             <Spin indicator={antIcon} className="spinner" />
           </div>
         ) : (
-          <Row gutter={[24, 24]}>
+          <Row gutter={[24, 24]} style={{ marginTop:"4rem" }}className="order-row">
             <Col
-              xs={{ span: 20, offset: 2 }}
-              lg={{ span: 11, offset: 2 }}
+              xs={{ span: 22, offset: 0 }}
+              lg={{ span: 9, offset: 0 }}
             >
-              <h5 style={{ color: 'black' }}>Order Items</h5>
+              <h5 style={{ color: 'black', marginBottom:"2rem",paddingTop:"2rem" }}>Order Items</h5>
               <div className="card card-body">
                
                 {cartItems.length === 0 ? (
@@ -58,6 +63,7 @@ export default function PlaceOrderCard() {
                 ) : (
                   cartItems.map(item => (
                     <li key={item.id} className="order-cart-item">
+                    
                       <div className="order-cart-image">
                         <img src={item.image} alt={item.name} />
                       </div>
@@ -66,18 +72,17 @@ export default function PlaceOrderCard() {
                         <div className="order-item">
                           <div className="cart-author-name">{item.author}</div>
                           <div className="cart-color">{item.col}</div>
-                          <div className="product-qty">
-                          Qty:{item.qty}
+                          <div className="qtyPrice">
+                            <div className="product-qty">
+                              Qty:{item.qty}
+                            </div>
+                            <div className="order-cart-price">
+                              ${item.price * item.qty}
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div className="card-bottom">
-                      <div className="order-cart-item-end">
-                        <div className="cart-price">
-                          ${item.price * item.qty}
-                        </div>
-                      </div>
-                      </div>
+                      <div className="card-bottom"></div>
 
                     </li>
                   ))
@@ -89,10 +94,11 @@ export default function PlaceOrderCard() {
 
             </Col>
             <Col
-              xs={{ span: 20, offset: 2 }}
-              lg={{ span: 9, offset: 0 }}
+               xs={{ span: 22, offset: 0 }}
+               lg={{ span: 8, offset: 0 }}
             >
-               <h5 style={{ color: 'black' }}>Check out</h5>
+               <div className="bg-grey">
+               <h5 style={{ color: 'black', marginBottom:"2rem" }}>Check out</h5>
               <div className="card card-body">
                 <h6 style={{ color: '#FFC72D' }}>Shipping</h6>
                 <div className="checkout-content">
@@ -113,20 +119,20 @@ export default function PlaceOrderCard() {
               </div>
               <div className="card card-body card-bottom3">
                 <h6 style={{ color: '#FFC72D' }}>Order Summary</h6>
-                <div className="row checkout-content">
+                <div className="checkout-content">
                   <div>Items：</div>
                   <div>${cart.itemsPrice}</div>
                 </div>
-                <div className="row checkout-content">
+                <div className="checkout-content">
                   <div>Shipping：</div>
                   <div>${cart.shippingPrice}</div>
                 </div>
-                <div className="row checkout-content">
+                <div className="checkout-content">
                   <div>Tax：</div>
                   <div>${cart.taxPrice}</div>
                 </div>
               </div>
-              <div className="row checkout-Totalcontent">
+              <div className="checkout-Totalcontent">
                   <div>
                     <strong> Total：</strong>
                   </div>
@@ -134,14 +140,22 @@ export default function PlaceOrderCard() {
                     <strong>${cart.totalPrice}</strong>
                   </div>
                 </div>
+                <div>
               <Button
                   className="placeOrder__button"
                   block
                   type="primary"
-                  onClick={placeOrderHandler}
+                  //onClick={placeOrderHandler}
+                  onClick={toggleModal}
                 >
                   Check 
                 </Button>
+                <OrderModal
+                  isModalVisible={isModalVisible}
+                  toggleModal={toggleModal}
+                />
+                </div>
+                </div>  
 
             </Col>
           </Row>

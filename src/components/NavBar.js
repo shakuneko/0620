@@ -19,18 +19,13 @@ export default function NavBar()    {
                     <NavLink to="/about-Us" className="menu1" activeClassName="menu1--active">
                         About Us
                     </NavLink>
-                    <NavLink
-                        to="/admin/feed-products"
-                        className="menu1"
-                        activeClassName="menu1--active"
-                        >
-                        JSON Feeder
-                    </NavLink>
                 </div>
                 <div className=" header-icon ">
+                    
                     <img alt="" className="header-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/Search_bg.png"/>
                     <UserInfo/>
                     <CartSummary/>
+
                 </div>
             </div> 
     

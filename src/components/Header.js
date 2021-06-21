@@ -33,7 +33,7 @@ export default function Header() {
             <div className="navbar">
                 {/* <UserInfo style={{marginRight: '20px'}} /> */}
                 <NavBar />
-                <ViewProfileButton  />
+                <ViewProfileButton />
             </div>
             <HamMenu player={activeNavItem} visible={visible} onClose={onClose}/>
        </div>

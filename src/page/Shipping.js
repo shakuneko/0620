@@ -9,7 +9,7 @@ function Shipping() {
     <Layout className=" main-layout">
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
-          <ShippingHeader title="Shipping" step1  />
+          <ShippingHeader className="shipping-title" title="Shipping" step1  />
         </Header>
         <Content className="Shipping-content">
           <ShippingAddressCard />

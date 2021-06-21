@@ -29,9 +29,9 @@ function ProductDetail() {
             </Col>
             <Col  className="shop-top-right" lg={{span:7, offset:1}} sm={{ span: 17 }} xs={{ span:18 }}>
                 <div className="shop-top-right-container">
-                <h2 className="product-name">
+                    <div className="product-category">
                         {product.category}
-                    </h2>
+                    </div>
                     <h2 className="product-name">
                         {product.name}
                     </h2>    

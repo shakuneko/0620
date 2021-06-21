@@ -13,13 +13,12 @@ export default function ShippingHeader(props) {
     history.push("/");
   };
     return (
-    <div>
-      <h3 className="header-title-sm" onClick={onClickHeader}>Your Home</h3>
+    <div className="order">
+      <h3 className="header-title  header-title-sm" onClick={onClickHeader}>Your Home</h3>
       <header className="order-main-layout">
-            <h1 className="order-title">{props.title}</h1>
+            <h4 className="order-title">{props.title}</h4>
       </header>
       </div>
 
     );
   }
-  

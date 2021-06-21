@@ -8,7 +8,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 
 export default function ProductList(){
   const { state: { page: { products } , requestProducts: { loading }} } = useContext(StoreContext);
-  const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
+  const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#FFC72D" }} spin />;
   return(
       <div  className="product">
           <img alt="" className="header-pic"src="https://raw.githubusercontent.com/shakuneko/icon/master/Slogan.png"/>
