@@ -11,7 +11,7 @@ export default function ProductList(){
   const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
   return(
       <div  className="product">
-          <img alt="" className="header-pic"src="https://img.onl/u7zjYS"/>
+          <img alt="" className="header-pic"src="https://raw.githubusercontent.com/shakuneko/icon/master/Slogan.png"/>
             
             <div className="big-container">
               <div  className="text-center">

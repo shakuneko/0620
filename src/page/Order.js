@@ -6,12 +6,12 @@ const { Header, Content, Footer } = Layout;
 
 function Order({ match }) {
    return (
-    <Layout className="container main-layout">
+    <Layout className="main-layout">
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
-          <OrderHeader title={`Order: ${match.params.orderId}`} />
+          <OrderHeader title={` ${match.params.orderId}`} />
         </Header>
-        <Content className="layout-content">
+        <Content className="order-content">
            <OrderCard orderId={match.params.orderId} />
         </Content>
         <Footer className="layout-footer">

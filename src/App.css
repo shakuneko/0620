@@ -82,6 +82,7 @@ h3 {
   line-height: normal;
 }
 .header-title-sm{
+  padding-top: 15px;
   color:#FFC72D;
   
 }
@@ -378,7 +379,7 @@ h5 {
 }
 /* btn */
 .designer-btn{
-  width: 20%;
+  width: 25%;
   display: flex;
   align-items: flex-end;
   margin-left: auto;
@@ -1324,16 +1325,27 @@ ul {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 5rem 0 5rem 0;
+  padding: 5rem 0 0 0;
+}
+.Login-content-sm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 0 5rem 2rem;
 }
 .Login-content-title{
+
   font-size: 20px;
   margin-bottom: 40px;
   
 }
 .login-form{
+
   width: 40%;
 }
+
 .login-form__button{
   width: 100%;
   height: 40px;
@@ -1405,31 +1417,48 @@ ul {
 .Profile-content{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:center;
+  flex-direction: column;
   width: 100%;
   padding: 5rem 0 5rem 0;
 }
-
+.profile-order{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+  width: 100%;
+}
+.logout-form__button{
+  width: 100%;
+  height: 40px;
+  background-color: #FFC72D;
+}
+.ant-form-item{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
 /* Shipping Page */
 .Shipping-content{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 5rem 0 5rem 0;
+  padding: 5rem 0 5rem 4rem;
   margin-top: 5rem;
 }
 
 /* Payment Page */
 .Payment-content{
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 5rem 0 5rem 0;
+  padding: 5rem 0 5rem 4rem;
   margin-top: 5rem;
 }
+
 .ant-form-item-control-input{
   display: flex;
   justify-content:center;
@@ -1446,13 +1475,73 @@ ul {
   background-color: #FFC72D;
 }
 
-/* PlaceOrder / Order Card */
-.card {
-  border: 0.1rem #c0c0c0 solid;
-  border-radius: 0.5rem;
+/* PlaceOrder  */
+.PlaceOrder-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5rem 0 5rem 0;
+  margin-top: 5rem;
+}
+.placeOrder__button{
+  margin-top:10px;
+  width: 100%;
+  height: 40px;
+  background-color: #426393;
+}
+.card-bottom {
+  width: 90%;
+  border-bottom: 0.05rem #426393 solid ;
+  margin-top: 1rem;
+}
+.card-bottom2 {
+  border-bottom: 0.1rem #FFC72D solid ;
   margin-top: 1rem;
 }
 
-.card-body {
-  padding: 1rem;
+.checkout-content{
+  display: flex;
+  justify-content:space-between;
+  padding-bottom:10px;
+}
+.checkout-Totalcontent{
+  display: flex;
+  justify-content:space-between;
+  padding-top:10px;
+}
+.ant-row{
+  width: 100%;
+}
+
+/* Order Card */
+
+.order-main-layout{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+.order-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5rem 0 5rem 0;
+  margin-top: 5rem;
+} 
+.order-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-bottom3 {
+  border-bottom: 0.1rem #426393 solid ;
+  margin-top: 1rem;
+}
+.OrderPay__button{
+  margin-top:50px;
+  width: 100%;
+  height: 40px;
+  background-color: #426393;
+
 }

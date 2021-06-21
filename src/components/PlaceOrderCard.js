@@ -48,25 +48,11 @@ export default function PlaceOrderCard() {
           <Row gutter={[24, 24]}>
             <Col
               xs={{ span: 20, offset: 2 }}
-              lg={{ span: 13, offset: 2 }}
+              lg={{ span: 10, offset: 2 }}
             >
-              <div className="card card-body">
-                <h2 style={{ color: 'white' }}>Shipping</h2>
-                <p>
-                  <strong>Name:</strong> {cart.shippingAddress.fullName} <br />
-                  <strong>Address: </strong> {cart.shippingAddress.address},
-                  {cart.shippingAddress.city}, {cart.shippingAddress.postalCode}
-                  ,{cart.shippingAddress.country}
-                </p>
-              </div>
-              <div className="card card-body">
-                <h2 style={{ color: 'white' }}>Payment</h2>
-                <p>
-                  <strong>Method:</strong> {cart.paymentMethod}
-                </p>
-              </div>
-              <div className="card card-body">
-                <h2 style={{ color: 'white' }}>Order Items</h2>
+              <h5 style={{ color: 'black' }}>Order Items</h5>
+              <div className="card card-body card-bottom">
+               
                 {cartItems.length === 0 ? (
                   <div>Cart is empty</div>
                 ) : (
@@ -77,6 +63,8 @@ export default function PlaceOrderCard() {
                       </div>
                       <div className="cart-item-content">
                         <div className="cart-name">{item.name}</div>
+                        <div className="cart-author-name">{item.author}</div>
+                        <div className="cart-color">{item.col}</div>
                         <div className="product-qty">
                           Qty: {item.qty}
                         </div>
@@ -90,8 +78,7 @@ export default function PlaceOrderCard() {
                     </li>
                   ))
                 )}
-                <div className="cart-total-price-wrap">
-                  Total
+                <div className="cart-total-price-wrap-order">
             <div className="cart-total-price">${getTotalPrice()}</div>
                 </div>
               </div>
@@ -99,39 +86,58 @@ export default function PlaceOrderCard() {
             </Col>
             <Col
               xs={{ span: 20, offset: 2 }}
-              lg={{ span: 7, offset: 0 }}
+              lg={{ span: 9, offset: 0 }}
             >
+               <h5 style={{ color: 'black' }}>Check out</h5>
               <div className="card card-body">
-                <h2 style={{ color: 'white' }}>Order Summary</h2>
-                <div className="row">
-                  <div>Items</div>
+                <h6 style={{ color: '#FFC72D' }}>Shipping</h6>
+                <div className="checkout-content">
+                  <div>Name：</div> 
+                  <div>{cart.shippingAddress.fullName}</div>
+                </div>
+                <div className="checkout-content"> 
+                  <div>Address： </div> 
+                  <div>{cart.shippingAddress.address},{cart.shippingAddress.city}, 
+                  {cart.shippingAddress.postalCode},{cart.shippingAddress.country}</div>
+                </div> 
+              </div>
+              <div className="card card-body">
+                <h6 style={{ color: '#FFC72D' }}>Payment</h6>
+                <p className="checkout-content">
+                  <div>Method：</div> {cart.paymentMethod}
+                </p>
+              </div>
+              <div className="card card-body card-bottom3">
+                <h6 style={{ color: '#FFC72D' }}>Order Summary</h6>
+                <div className="row checkout-content">
+                  <div>Items：</div>
                   <div>${cart.itemsPrice}</div>
                 </div>
-                <div className="row">
-                  <div>Shipping</div>
+                <div className="row checkout-content">
+                  <div>Shipping：</div>
                   <div>${cart.shippingPrice}</div>
                 </div>
-                <div className="row">
-                  <div>Tax</div>
+                <div className="row checkout-content">
+                  <div>Tax：</div>
                   <div>${cart.taxPrice}</div>
                 </div>
-                <div className="row">
+              </div>
+              <div className="row checkout-Totalcontent">
                   <div>
-                    <strong> Order Total</strong>
+                    <strong> Total：</strong>
                   </div>
                   <div>
                     <strong>${cart.totalPrice}</strong>
                   </div>
                 </div>
-                <Button
-                  className="primary-btn"
+              <Button
+                  className="placeOrder__button"
                   block
                   type="primary"
                   onClick={placeOrderHandler}
                 >
-                  Place Order
+                  Check 
                 </Button>
-              </div>
 
             </Col>
           </Row>

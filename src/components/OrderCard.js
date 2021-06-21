@@ -1,8 +1,8 @@
 import { useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { Row, Col, Spin } from "antd";
+import { Row, Col, Spin,Button } from "antd";
 import { LoadingOutlined } from '@ant-design/icons';
-import GooglePayButton from '@google-pay/button-react';
+// import GooglePayButton from '@google-pay/button-react';
 import { requestOrderDetail } from "../action"
 import { StoreContext } from "../store";
 
@@ -11,37 +11,43 @@ export default function OrderCard({ orderId }) {
    const { orderItems } = order;
    const history = useHistory()
    const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
-
-   const paymentRequest = {
-      apiVersion: 2,
-      apiVersionMinor: 0,
-      allowedPaymentMethods: [
-        {
-          type: "CARD",
-          parameters: {
-            allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-            allowedCardNetworks: ["MASTERCARD", "VISA"]
-          },
-          tokenizationSpecification: {
-            type: "PAYMENT_GATEWAY",
-            parameters: {
-              gateway: "example"
-            }
-          }
-        }
-      ],
-      merchantInfo: {
-        merchantId: "12345678901234567890",
-        merchantName: "Demo Merchant"
-      },
-      transactionInfo: {
-        totalPriceStatus: "FINAL",
-        totalPriceLabel: "Total",
-        totalPrice: String(order.totalPrice),
-        currencyCode: "USD",
-        countryCode: "US"
-      }
+   
+   // const placeOrderHandler = () => {
+   //    createOrder(dispatch, cart)
+   //  };
+    const placeOrderPay = () => {
+      history.push('/');
     };
+   // const paymentRequest = {
+   //    apiVersion: 2,
+   //    apiVersionMinor: 0,
+   //    allowedPaymentMethods: [
+   //      {
+   //        type: "CARD",
+   //        parameters: {
+   //          allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+   //          allowedCardNetworks: ["MASTERCARD", "VISA"]
+   //        },
+   //        tokenizationSpecification: {
+   //          type: "PAYMENT_GATEWAY",
+   //          parameters: {
+   //            gateway: "example"
+   //          }
+   //        }
+   //      }
+   //    ],
+   //    merchantInfo: {
+   //      merchantId: "12345678901234567890",
+   //      merchantName: "Demo Merchant"
+   //    },
+   //    transactionInfo: {
+   //      totalPriceStatus: "FINAL",
+   //      totalPriceLabel: "Total",
+   //      totalPrice: String(order.totalPrice),
+   //      currencyCode: "USD",
+   //      countryCode: "US"
+   //    }
+   //  };
 
    useEffect(() => {
       requestOrderDetail(dispatch, orderId)
@@ -58,25 +64,10 @@ export default function OrderCard({ orderId }) {
                <Row gutter={[24, 24]}>
                   <Col
                      xs={{ span: 20, offset: 2 }}
-                     lg={{ span: 13, offset: 2 }}
+                     lg={{ span: 10, offset: 2 }}
                   >
-                     <div className="card card-body">
-                        <h2 style={{ color: 'white' }}>Shipping</h2>
-                        <p>
-                           <strong>Name:</strong> {order.shippingAddress.fullName} <br />
-                           <strong>Address: </strong> {order.shippingAddress.address},
-                  {order.shippingAddress.city}, {order.shippingAddress.postalCode}
-                  ,{order.shippingAddress.country}
-                        </p>
-                     </div>
-                     <div className="card card-body">
-                        <h2 style={{ color: 'white' }}>Payment</h2>
-                        <p>
-                           <strong>Method:</strong> {order.paymentMethod}
-                        </p>
-                     </div>
-                     <div className="card card-body">
-                        <h2 style={{ color: 'white' }}>Order Items</h2>
+                     <h5 style={{ color: 'black' }}>Order Items</h5>
+                     <div className="card card-body card-bottom">
                         {orderItems.length === 0 ? (
                            <div>Cart is empty</div>
                         ) : (
@@ -109,31 +100,61 @@ export default function OrderCard({ orderId }) {
                   </Col>
                   <Col
                      xs={{ span: 20, offset: 2 }}
-                     lg={{ span: 7, offset: 0 }}
+                     lg={{ span: 9, offset: 0 }}
                   >
+                     <h5 style={{ color: 'black' }}>Check out</h5>
                      <div className="card card-body">
-                        <h2 style={{ color: 'white' }}>Order Summary</h2>
-                        <div className="row">
+                     <h6 style={{ color: '#426393' }}>Shipping</h6>
+                        <div className="checkout-content">
+                           <div>Name：</div> 
+                           <div>{order.shippingAddress.fullName} </div>
+                        </div>
+                        <div className="checkout-content"> 
+                           <div>Address： </div>  
+                           <div>{order.shippingAddress.address},{order.shippingAddress.city}, 
+                           {order.shippingAddress.postalCode},{order.shippingAddress.country}</div>
+                        </div>
+                     </div>
+                     <div className="card card-body">
+                        <h6 style={{ color: '#426393' }}>Payment</h6>
+                        <p className="checkout-content">
+                           <div>Method：</div> {order.paymentMethod}
+                        </p>
+                     </div>
+                     <div className="card card-body card-bottom3">
+                        <h6 style={{ color: '#426393' }}>Order Summary</h6>
+                        <div className="row checkout-content">
                            <div>Items</div>
                            <div>${order.itemsPrice}</div>
                         </div>
-                        <div className="row">
+                        <div className="row checkout-content">
                            <div>Shipping</div>
                            <div>${order.shippingPrice}</div>
                         </div>
-                        <div className="row">
+                        <div className="row checkout-content">
                            <div>Tax</div>
                            <div>${order.taxPrice}</div>
                         </div>
-                        <div className="row">
+                     </div>
+
+                     <div className="row checkout-Totalcontent">
                            <div>
-                              <strong> Order Total</strong>
+                              <strong>Total：</strong>
                            </div>
                            <div>
                               <strong>${order.totalPrice}</strong>
                            </div>
                         </div>
-                        <GooglePayButton
+                        <Button
+                           className="OrderPay__button"
+                           block
+                           type="primary"
+                           onClick={placeOrderPay}
+                        >
+                           Continue Shopping
+                        </Button>
+                        {/* <GooglePayButton
+                           className="googlepay__button"
                            environment="TEST"
                            buttonColor="black"
                            paymentRequest={paymentRequest}
@@ -141,8 +162,7 @@ export default function OrderCard({ orderId }) {
                               console.log('load payment data', paymentRequest);
                               history.push('/');
                            }}
-                        />
-                     </div>
+                        /> */}
 
                   </Col>
                </Row>
