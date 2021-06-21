@@ -1333,7 +1333,7 @@ ul {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0 0 5rem 2rem;
+  padding: 0 0 5rem 0;
 }
 .Login-content-title{
 
@@ -1445,7 +1445,7 @@ ul {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 5rem 0 5rem 4rem;
+  padding: 5rem 0 5rem 0;
   margin-top: 5rem;
 }
 
@@ -1455,7 +1455,7 @@ ul {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 5rem 0 5rem 4rem;
+  padding: 5rem 3rem 5rem 3rem;
   margin-top: 5rem;
 }
 
@@ -1484,6 +1484,9 @@ ul {
   padding: 5rem 0 5rem 0;
   margin-top: 5rem;
 }
+.PlaceOrder-content-sm{
+  width: 80%;
+}
 .placeOrder__button{
   margin-top:10px;
   width: 100%;
@@ -1493,7 +1496,7 @@ ul {
 .card-bottom {
   width: 90%;
   border-bottom: 0.05rem #426393 solid ;
-  margin-top: 1rem;
+  margin-bottom:10px;
 }
 .card-bottom2 {
   border-bottom: 0.1rem #FFC72D solid ;
@@ -1545,3 +1548,44 @@ ul {
   background-color: #426393;
 
 }
+
+.order-cart-item-content{
+  display: flex;
+  flex-direction: column;
+  padding-left:10px;
+
+}
+.order-cart-item{
+  display: flex;
+  justify-content:start;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.order-cart-image {
+  width: 40%;
+}
+
+.order-cart-image img{
+  width: 100%;
+  height:12rem;
+  flex: 1 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.order-cart-name{
+  font-size: 15px;
+}
+.order-item{
+  font-size: 12px;
+  padding-top: 5px;
+}
+.order-cart-item-end{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+}
+

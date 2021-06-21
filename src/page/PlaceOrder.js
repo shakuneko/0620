@@ -12,7 +12,9 @@ function PlaceOrder() {
           <ShippingHeader title="Order" step1 step2 step3  />
         </Header>
         <Content className="PlaceOrder-content">
+          <div className="PlaceOrder-content-sm">
            <PlaceOrderCard />
+           </div>
         </Content>
         <Footer className="layout-footer">
           <AppFooter />

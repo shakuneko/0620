@@ -32,7 +32,7 @@ export default function PlaceOrderCard() {
   useEffect(() => {
     if (success) {
       resetOrder(dispatch);
-      // requestOrderDetail(dispatch, order.id)
+      requestOrderDetail(dispatch, order.id)
       history.push(`/order/${order.id}`);
     }
   }, [success]);
@@ -48,38 +48,43 @@ export default function PlaceOrderCard() {
           <Row gutter={[24, 24]}>
             <Col
               xs={{ span: 20, offset: 2 }}
-              lg={{ span: 10, offset: 2 }}
+              lg={{ span: 11, offset: 2 }}
             >
               <h5 style={{ color: 'black' }}>Order Items</h5>
-              <div className="card card-body card-bottom">
+              <div className="card card-body">
                
                 {cartItems.length === 0 ? (
                   <div>Cart is empty</div>
                 ) : (
                   cartItems.map(item => (
-                    <li key={item.id} className="cart-item">
-                      <div className="cart-image">
+                    <li key={item.id} className="order-cart-item">
+                    
+                      <div className="order-cart-image">
                         <img src={item.image} alt={item.name} />
                       </div>
-                      <div className="cart-item-content">
-                        <div className="cart-name">{item.name}</div>
-                        <div className="cart-author-name">{item.author}</div>
-                        <div className="cart-color">{item.col}</div>
-                        <div className="product-qty">
-                          Qty: {item.qty}
+                      <div className="order-cart-item-content">
+                        <div className="order-cart-name">{item.name}</div>
+                        <div className="order-item">
+                          <div className="cart-author-name">{item.author}</div>
+                          <div className="cart-color">{item.col}</div>
+                          <div className="product-qty">
+                          Qty:{item.qty}
+                          </div>
                         </div>
                       </div>
-                      <div className="cart-item-end">
+                      <div className="card-bottom">
+                      <div className="order-cart-item-end">
                         <div className="cart-price">
                           ${item.price * item.qty}
                         </div>
+                      </div>
                       </div>
 
                     </li>
                   ))
                 )}
                 <div className="cart-total-price-wrap-order">
-            <div className="cart-total-price">${getTotalPrice()}</div>
+            {/* <div className="cart-total-price">${getTotalPrice()}</div> */}
                 </div>
               </div>
 

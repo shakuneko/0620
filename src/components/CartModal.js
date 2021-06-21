@@ -16,7 +16,8 @@ export default function CartModal() {
          cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)
          : 0;
    }
-   const checkoutHandler = () => {
+   const checkoutHandler = (e) => {
+      e.preventDefault();
       history.push("/login?redirect=shipping");
    }
    useEffect(()=>{
