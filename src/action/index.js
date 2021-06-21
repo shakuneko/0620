@@ -48,10 +48,9 @@ import {
   createOrderApi,
   getOrderById,
   getOrderByUser,
-  checkLoginApi
 } from "../api/index";
 
-export const addCartItem = (dispatch, product, qty,col,colNum) => {
+export const addCartItem = (dispatch, product, qty,col) => {
   const item = {
     id: product.id,
     category: product.category,
@@ -62,7 +61,7 @@ export const addCartItem = (dispatch, product, qty,col,colNum) => {
     countInStock: product.countInStock,
     qty,
     col,
-    colNum
+    
   };
   dispatch({
     type: ADD_CART_ITEM,
@@ -103,7 +102,7 @@ export const feedJSONToFirebase = async (dispatch) => {
   }
 }
 
-export const setProductDetail = async (dispatch, productId, qty,col,colNum) => {
+export const setProductDetail = async (dispatch, productId, qty,col) => {
   dispatch({ type: BEGIN_PRODUCTS_REQUEST });
   try {
     const product = await getProductById(productId);
@@ -124,7 +123,7 @@ export const setProductDetail = async (dispatch, productId, qty,col,colNum) => {
             product,
             qty,
             col,
-            colNum
+
                 }
               })
     dispatch({ type: SUCCESS_PRODUCTS_REQUEST });
