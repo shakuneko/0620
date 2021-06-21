@@ -8,7 +8,7 @@ export default function ShopProductItem( { product }) {
     const { dispatch } = useContext(StoreContext);
     return (
         <Card className="shop-product">
-            <Link  to={`/product/${product.id}`}
+            <Link to={`/products/${product.category}/${product.id}`}
                 onClick={() =>{
                     setProductDetail(dispatch,product.id,1);
                 }}>
@@ -18,6 +18,9 @@ export default function ShopProductItem( { product }) {
                     alt={product.alt} />
             </Link>
             <div className="product-info">
+                <h6 >
+                    {product.category}
+                </h6>
                 <h5>
                     {product.name}
                 </h5>

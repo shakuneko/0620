@@ -12,7 +12,9 @@ function Order({ match }) {
           <OrderHeader title={` ${match.params.orderId}`} />
         </Header>
         <Content className="order-content">
+        <div className="PlaceOrder-content-sm">
            <OrderCard orderId={match.params.orderId} />
+          </div>
         </Content>
         <Footer className="layout-footer">
           <AppFooter />

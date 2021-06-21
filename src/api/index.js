@@ -90,6 +90,7 @@ export const createOrderApi = async (order) => {
   const orderRef = await allOrdersCollectionRef.doc();
   const id = orderRef.id;
   // Store Data for Aggregation Queries
+  console.log(order);
   await orderRef.set({
     ...order,
     id,

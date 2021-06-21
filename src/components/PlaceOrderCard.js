@@ -58,7 +58,6 @@ export default function PlaceOrderCard() {
                 ) : (
                   cartItems.map(item => (
                     <li key={item.id} className="order-cart-item">
-                    
                       <div className="order-cart-image">
                         <img src={item.image} alt={item.name} />
                       </div>
