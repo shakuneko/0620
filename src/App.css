@@ -194,6 +194,10 @@ h3 {
   .menu1 {
     font-size: 0.7rem;
   }
+  .header-pic{
+  
+    height: 250px;
+  }
 } 
 
 /* hammenu(Drawer) */
@@ -273,7 +277,9 @@ h3 {
   margin: 1rem 0 1rem 0;
   width: 7%;
 }
-
+.header-icon2{
+  margin: 1rem 0 2rem 0;
+}
 /*product*/
 .product{
   width: 100%;

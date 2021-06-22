@@ -53,12 +53,12 @@ export const feedProducts = () => {
   products.forEach((product) => {
     const docRef = allProductsCollectionRef.doc();
     const id = docRef.id;
-    const user = auth.currentUser._id;
+    //const user = auth.currentUser._id;
 
     // Store Data for Aggregation Queries
     docRef.set({
       ...product,
-      user,
+      //user,
       id
     });
   })
@@ -86,7 +86,7 @@ export const updateUserInfoApi = async (email, password, displayName) => {
   return user;
 }
 export const createOrderApi = async (order) => {
-  const user = auth.currentUser.uid;
+  //const user = auth.currentUser.uid;
   const orderRef = await allOrdersCollectionRef.doc();
   const id = orderRef.id;
   // Store Data for Aggregation Queries
@@ -94,7 +94,7 @@ export const createOrderApi = async (order) => {
   await orderRef.set({
     ...order,
     id,
-    user
+    //user
   });
   return { ...order, id };
 
